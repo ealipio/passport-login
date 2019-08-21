@@ -1,0 +1,20 @@
+{
+  "name": "facebook-login",
+  "version": "1.0.0",
+  "description": "using passport and nodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ealipio/facebook-login.git"
+  },
+  "keywords": [],
+  "author": "Eisson Alipio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ealipio/facebook-login/issues"
+  },
+  "homepage": "https://github.com/ealipio/facebook-login#readme"
+}
