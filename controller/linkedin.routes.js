@@ -6,7 +6,7 @@ require('./linkedin.setup');
 Router.get(
   '/',
   passport.authenticate('linkedin', {
-    scope: ['profile']
+    scope: ['r_basicprofile', 'r_emailaddress']
   })
 );
 
