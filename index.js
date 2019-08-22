@@ -5,6 +5,7 @@ const express = require('express'),
   session = require('express-session'),
   bodyParser = require('body-parser'),
   facebookRoutes = require('./controller/facebook.routes'),
+  googleRoutes = require('./controller/google.routes'),
   localUserRoutes = require('./controller/localuser.routes'),
   key = require('./key');
 
@@ -43,6 +44,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/auth/facebook/', facebookRoutes); // localhost:3000/auth/facebook/<Route>
+app.use('/auth/google/', googleRoutes);  // localhost:3000/auth/google/<Route>
 app.use('/auth/localuser/', localUserRoutes); // localhost:3000/auth/localuser/<Route>
 
 app.get('/homepage', (req, res) => {
