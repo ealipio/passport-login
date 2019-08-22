@@ -20,7 +20,7 @@ node index.js
 * clientSecret: GOOGLE_CLIENT_SECRET,
 * callbackURL: "http://..../auth/google/callback"
 * examples: https://github.com/jaredhanson/passport-google-oauth2
-
+---------------------------------------------------------
 * clientID: LINKEDIN_API_KEY,
 * clientSecret: LINKEDIN_SECRET_KEY,
 * callbackURL: "http://...../auth/linkedin/callback"
