@@ -21,10 +21,10 @@ node index.js
 * callbackURL: "http://..../auth/google/callback"
 * examples: https://github.com/jaredhanson/passport-google-oauth2
 
-* consumerKey: LINKEDIN_API_KEY,
-* consumerSecret: LINKEDIN_SECRET_KEY,
+* clientID: LINKEDIN_API_KEY,
+* clientSecret: LINKEDIN_SECRET_KEY,
 * callbackURL: "http://...../auth/linkedin/callback"
-* examples: https://github.com/jaredhanson/passport-linkedin
+* examples: https://github.com/auth0/passport-linkedin-oauth2
 ---------------------------------------------------------
 routes in server:
 * /auth/google
