@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homepage</title>
+  </head>
+  <body>
+    <form action="/auth/localuser/new" method="post">
+      <p>Sign Up:</p>
+      <input name="username" placeholder="username" />
+      <input name="password" placeholder="password" />
+      <input type="submit" />
+    </form>
+
+    <form action="/auth/localuser/login" method="post">
+      <p>Login:</p>
+      <input name="username" placeholder="username" />
+      <input name="password" placeholder="password" />
+      <input type="submit" />
+    </form>
+
+    <a href="/auth/facebook">Sign In With Facebook</a>
+  </body>
+</html>
