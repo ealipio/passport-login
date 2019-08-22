@@ -1,7 +1,8 @@
 const passport = require('passport'),
   // linkedinStrategy = require('passport-linkedin'),
   //linkedInStrategy = require('passport-linkedin').Strategy,
-  linkedInStrategy = require('passport-linkedin-oauth2').Strategy,
+  // linkedInStrategy = require('passport-linkedin-oauth2').Strategy,
+  linkedInStrategy = require('@sokratis/passport-linkedin-oauth2').Strategy,
   key = require('../key'),
   User = require('../model/user.model');
 
@@ -25,7 +26,6 @@ passport.use(
       state: true
     },
     (accessToken, refreshToken, profile, done) => {
-      console.log('+++++++++++++++++++++++++', profile);
       User.findOne({ linkedinId: profile.id }).then(currentuser => {
         if (currentuser) {
           done(null, currentuser);

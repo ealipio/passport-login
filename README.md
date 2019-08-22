@@ -24,7 +24,9 @@ node index.js
 * clientID: LINKEDIN_API_KEY,
 * clientSecret: LINKEDIN_SECRET_KEY,
 * callbackURL: "http://...../auth/linkedin/callback"
-* examples: https://github.com/auth0/passport-linkedin-oauth2
+* examples: 
+    * https://github.com/auth0/passport-linkedin-oauth2  [DEPRECATED]
+    * https://github.com/sokratisvidros/passport-linkedin-oauth2
 ---------------------------------------------------------
 routes in server:
 * /auth/google
