@@ -6,11 +6,11 @@ require('./linkedin.setup');
 Router.get(
   '/',
   passport.authenticate('linkedin', {
-    scope: ['r_basicprofile', 'r_emailaddress']
+    scope: ['r_emailaddress', 'r_liteprofile']
   })
 );
 
-Router.get('/redirect', passport.authenticate('linkedin'), (req, res) => {
+Router.get('/redirect', passport.authenticate('linkedin', {state:'HolyMoly'}), (req, res) => {
   res.redirect('/homepage');
 });
 

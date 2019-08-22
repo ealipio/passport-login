@@ -1,5 +1,7 @@
 const passport = require('passport'),
-  linkedinStrategy = require('passport-linkedin'),
+  // linkedinStrategy = require('passport-linkedin'),
+  //linkedInStrategy = require('passport-linkedin').Strategy,
+  linkedInStrategy = require('passport-linkedin-oauth2').Strategy,
   key = require('../key'),
   User = require('../model/user.model');
 
@@ -15,13 +17,15 @@ passport.deserializeUser((id, done) => {
 });
 
 passport.use(
-  new linkedinStrategy(
+  new linkedInStrategy(
     {
-      consumerKey: key.linkedin.client_id,
-      consumerSecret: key.linkedin.client_secret,
-      callbackURL: '/auth/linkedin/redirect'
+      clientID: key.linkedin.client_id,
+      clientSecret: key.linkedin.client_secret,
+      callbackURL: '/auth/linkedin/redirect',
+      state: true
     },
     (accessToken, refreshToken, profile, done) => {
+      console.log('+++++++++++++++++++++++++', profile);
       User.findOne({ linkedinId: profile.id }).then(currentuser => {
         if (currentuser) {
           done(null, currentuser);

@@ -17,7 +17,7 @@ app.use(
   })
 );
 
-app.use(session({ secret: key.secret }));
+app.use(session({ secret: key.secret, saveUninitialized: true, resave: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
