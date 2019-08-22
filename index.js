@@ -6,6 +6,7 @@ const express = require('express'),
   bodyParser = require('body-parser'),
   facebookRoutes = require('./controller/facebook.routes'),
   googleRoutes = require('./controller/google.routes'),
+  linkedinRoutes = require('./controller/linkedin.routes'),
   localUserRoutes = require('./controller/localuser.routes'),
   key = require('./key');
 
@@ -21,9 +22,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./controller/facebook.setup');
+require('./controller/google.setup');
+require('./controller/linkedin.setup');
 
-// mongoose.connect('mongodb://localhost/');
-//------------------------------------------
+//-- mongo connection -------------------------------
 mongoose.connect(
   key.connectionMongoDB,
   {
@@ -45,6 +47,7 @@ app.get('/', (req, res) => {
 
 app.use('/auth/facebook/', facebookRoutes); // localhost:3000/auth/facebook/<Route>
 app.use('/auth/google/', googleRoutes);  // localhost:3000/auth/google/<Route>
+app.use('/auth/linkedin/', linkedinRoutes);  // localhost:3000/auth/google/<Route>
 app.use('/auth/localuser/', localUserRoutes); // localhost:3000/auth/localuser/<Route>
 
 app.get('/homepage', (req, res) => {
