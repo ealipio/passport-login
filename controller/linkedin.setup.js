@@ -3,7 +3,7 @@ const passport = require('passport'),
   //linkedInStrategy = require('passport-linkedin').Strategy,
   // linkedInStrategy = require('passport-linkedin-oauth2').Strategy,
   linkedInStrategy = require('@sokratis/passport-linkedin-oauth2').Strategy,
-  key = require('../key'),
+  key = require('../config/keys'),
   User = require('../model/user.model');
 
 passport.serializeUser((user, done) => {

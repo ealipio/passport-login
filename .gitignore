@@ -1,2 +1,4 @@
 node_modules
-key.js
+package-lock.json
+config/keys.dev.js
+config/keys.prod.js

@@ -8,7 +8,7 @@ const express = require('express'),
   googleRoutes = require('./controller/google.routes'),
   linkedinRoutes = require('./controller/linkedin.routes'),
   localUserRoutes = require('./controller/localuser.routes'),
-  key = require('./key');
+  keys = require('./config/keys');
 
 app.use(bodyParser.json());
 app.use(
@@ -17,7 +17,7 @@ app.use(
   })
 );
 
-app.use(session({ secret: key.secret, saveUninitialized: true, resave: true }));
+app.use(session({ secret: keys.secret, saveUninitialized: true, resave: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -27,7 +27,7 @@ require('./controller/linkedin.setup');
 
 //-- mongo connection -------------------------------
 mongoose.connect(
-  key.connectionMongoDB,
+  keys.connectionMongoDB,
   {
     useNewUrlParser: true,
     useCreateIndex: true

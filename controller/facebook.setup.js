@@ -1,6 +1,6 @@
 const passport = require('passport'),
   facebookStrategy = require('passport-facebook'),
-  key = require('../key'),
+  key = require('../config/keys'),
   User = require('../model/user.model');
 
 passport.serializeUser((user, done) => {
