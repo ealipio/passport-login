@@ -1,6 +1,7 @@
 const express = require('express'),
   app = express(),
   passport = require('passport'),
+  cors = require('cors'),
   mongoose = require('mongoose'),
   session = require('express-session'),
   bodyParser = require('body-parser'),
@@ -10,6 +11,8 @@ const express = require('express'),
   localUserRoutes = require('./controller/localuser.routes'),
   keys = require('./config/keys');
 
+app.set('port', process.env.PORT || 3000);
+
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
@@ -17,6 +20,7 @@ app.use(
   })
 );
 
+app.use(cors());
 app.use(session({ secret: keys.secret, saveUninitialized: true, resave: true }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -62,6 +66,6 @@ app.get('/homepage', (req, res) => {
   }
 });
 
-app.listen(3000, () => {
+app.listen(app.get('port'), () => {
   console.log('listening on http://localhost:3000/');
 });
